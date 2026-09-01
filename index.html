@@ -332,9 +332,9 @@
                 id="inviteStatus"
                 class="status-message">
 
-                Se o aplicativo não abrir automaticamente,
-                verifique se o Sintonia está instalado
-                neste dispositivo.
+                O aplicativo não abriu.
+                Confirme se a versão mais recente
+                do Sintonia está instalada.
 
             </div>
 
@@ -441,6 +441,7 @@
             if (
                 !codigo
             ) {
+
                 return false;
             }
 
@@ -514,19 +515,15 @@
                 codigoLimpo;
 
 
-            const intentLink =
-                "intent://invite/" +
+            const deepLink =
+                "sintonia://invite/" +
                 encodeURIComponent(
                     codigoLimpo
-                ) +
-                "#Intent;" +
-                "scheme=sintonia;" +
-                "package=com.sintonia.app;" +
-                "end";
+                );
 
 
             openInviteButton.href =
-                intentLink;
+                deepLink;
 
 
             openInviteButton.addEventListener(
@@ -537,8 +534,16 @@
 
                     event.preventDefault();
 
+
+                    /*
+                     * Abre diretamente o esquema
+                     * registrado no AndroidManifest.
+                     *
+                     * Não utiliza Google Play
+                     * e não utiliza package=.
+                     */
                     window.location.href =
-                        intentLink;
+                        deepLink;
 
 
                     setTimeout(
@@ -548,7 +553,7 @@
                                 "block";
 
                         },
-                        1500
+                        1800
                     );
                 }
             );
