@@ -71,4 +71,171 @@
 
         .button {
             display: inline-block;
-            margin-top: 
+            margin-top: 22px;
+            padding: 15px 26px;
+            border-radius: 30px;
+            background: #39ff88;
+            color: #080808;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .profile-id {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 12px;
+            background: #0f0f0f;
+            color: #39ff88;
+            font-size: 13px;
+            word-break: break-all;
+        }
+
+        .footer {
+            margin-top: 30px;
+            color: #777777;
+            font-size: 13px;
+        }
+
+        #profileContent {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="container">
+
+        <div class="logo">
+            <span>Sin</span>tonia
+        </div>
+
+        <div id="homeContent">
+
+            <h1>
+                Conecte-se com novas pessoas
+            </h1>
+
+            <p>
+                Conheça novas pessoas através do Sintonia.
+            </p>
+
+            <div class="card">
+
+                <div class="badge">
+                    SINTONIA
+                </div>
+
+                <h2>
+                    Encontre sua sintonia
+                </h2>
+
+                <p>
+                    Receba e abra perfis compartilhados
+                    através de links seguros.
+                </p>
+
+            </div>
+
+        </div>
+
+        <div id="profileContent" class="card">
+
+            <div class="badge">
+                PERFIL COMPARTILHADO
+            </div>
+
+            <h1>
+                Perfil no Sintonia
+            </h1>
+
+            <p>
+                Este perfil foi compartilhado pelo aplicativo Sintonia.
+            </p>
+
+            <div
+                id="profileId"
+                class="profile-id">
+            </div>
+
+            <a
+                id="openAppButton"
+                class="button"
+                href="#">
+                Abrir no Sintonia
+            </a>
+
+        </div>
+
+        <div class="footer">
+            Plataforma destinada exclusivamente a maiores de 18 anos.
+        </div>
+
+    </main>
+
+    <script>
+
+        const params =
+            new URLSearchParams(
+                window.location.search
+            );
+
+        const profileId =
+            params.get(
+                "profile"
+            );
+
+        const homeContent =
+            document.getElementById(
+                "homeContent"
+            );
+
+        const profileContent =
+            document.getElementById(
+                "profileContent"
+            );
+
+        const profileIdElement =
+            document.getElementById(
+                "profileId"
+            );
+
+        const openAppButton =
+            document.getElementById(
+                "openAppButton"
+            );
+
+        if (
+            profileId &&
+            profileId.trim() !== ""
+        ) {
+
+            homeContent.style.display =
+                "none";
+
+            profileContent.style.display =
+                "block";
+
+            profileIdElement.textContent =
+                profileId;
+
+            openAppButton.href =
+                "sintonia://profile/" +
+                encodeURIComponent(
+                    profileId
+                );
+
+        } else {
+
+            homeContent.style.display =
+                "block";
+
+            profileContent.style.display =
+                "none";
+        }
+
+    </script>
+
+</body>
+</html>
