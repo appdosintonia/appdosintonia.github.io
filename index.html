@@ -81,14 +81,18 @@
             font-size: 16px;
         }
 
-        .profile-id {
-            margin-top: 16px;
-            padding: 12px;
-            border-radius: 12px;
+        .profile-info {
+            margin-top: 20px;
+            padding: 16px;
+            border-radius: 16px;
             background: #0f0f0f;
+            color: #cfcfcf;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .profile-info strong {
             color: #39ff88;
-            font-size: 13px;
-            word-break: break-all;
         }
 
         .footer {
@@ -140,7 +144,9 @@
 
         </div>
 
-        <div id="profileContent" class="card">
+        <div
+            id="profileContent"
+            class="card">
 
             <div class="badge">
                 PERFIL COMPARTILHADO
@@ -151,19 +157,21 @@
             </h1>
 
             <p>
-                Este perfil foi compartilhado pelo aplicativo Sintonia.
+                Alguém compartilhou um perfil do Sintonia com você.
             </p>
 
-            <div
-                id="profileId"
-                class="profile-id">
+            <div class="profile-info">
+                <strong>Perfil disponível</strong>
+                <br>
+                Abra o aplicativo Sintonia para visualizar
+                as informações deste perfil.
             </div>
 
             <a
                 id="openAppButton"
                 class="button"
                 href="#">
-                Abrir no Sintonia
+                Abrir perfil no Sintonia
             </a>
 
         </div>
@@ -196,11 +204,6 @@
                 "profileContent"
             );
 
-        const profileIdElement =
-            document.getElementById(
-                "profileId"
-            );
-
         const openAppButton =
             document.getElementById(
                 "openAppButton"
@@ -216,9 +219,6 @@
 
             profileContent.style.display =
                 "block";
-
-            profileIdElement.textContent =
-                profileId;
 
             openAppButton.href =
                 "sintonia://profile/" +
