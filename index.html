@@ -2,11 +2,19 @@
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="theme-color"
+        content="#0b0b0b">
 
     <title>Sintonia</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -14,96 +22,308 @@
         body {
             margin: 0;
             min-height: 100vh;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #0b0b0b;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 24px;
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                #0b0b0b;
+
+            color:
+                #ffffff;
+
+            display:
+                flex;
+
+            align-items:
+                center;
+
+            justify-content:
+                center;
+
+            padding:
+                24px;
         }
 
         .container {
-            width: 100%;
-            max-width: 520px;
-            text-align: center;
+            width:
+                100%;
+
+            max-width:
+                520px;
+
+            text-align:
+                center;
         }
 
         .logo {
-            font-size: 42px;
-            font-weight: 800;
-            margin-bottom: 16px;
+            font-size:
+                42px;
+
+            font-weight:
+                800;
+
+            margin-bottom:
+                16px;
         }
 
         .logo span {
-            color: #39ff88;
+            color:
+                #39ff88;
         }
 
         h1 {
-            font-size: 30px;
-            margin-bottom: 12px;
+            font-size:
+                30px;
+
+            margin-top:
+                0;
+
+            margin-bottom:
+                12px;
+        }
+
+        h2 {
+            margin-top:
+                0;
+
+            margin-bottom:
+                10px;
         }
 
         p {
-            color: #cfcfcf;
-            font-size: 17px;
-            line-height: 1.5;
+            color:
+                #cfcfcf;
+
+            font-size:
+                17px;
+
+            line-height:
+                1.5;
         }
 
         .card {
-            margin-top: 28px;
-            padding: 26px 22px;
-            background: #151515;
-            border: 1px solid #2a2a2a;
-            border-radius: 22px;
+            margin-top:
+                28px;
+
+            padding:
+                26px 22px;
+
+            background:
+                #151515;
+
+            border:
+                1px solid #2a2a2a;
+
+            border-radius:
+                22px;
         }
 
         .badge {
-            display: inline-block;
-            margin-bottom: 16px;
-            padding: 7px 13px;
-            border-radius: 30px;
-            background: #16251c;
-            color: #39ff88;
-            font-size: 13px;
-            font-weight: bold;
+            display:
+                inline-block;
+
+            margin-bottom:
+                16px;
+
+            padding:
+                7px 13px;
+
+            border-radius:
+                30px;
+
+            background:
+                #16251c;
+
+            color:
+                #39ff88;
+
+            font-size:
+                13px;
+
+            font-weight:
+                bold;
+
+            letter-spacing:
+                0.4px;
         }
 
         .button {
-            display: inline-block;
-            margin-top: 22px;
-            padding: 15px 26px;
-            border-radius: 30px;
-            background: #39ff88;
-            color: #080808;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 16px;
+            display:
+                inline-block;
+
+            margin-top:
+                22px;
+
+            padding:
+                15px 26px;
+
+            border:
+                0;
+
+            border-radius:
+                30px;
+
+            background:
+                #39ff88;
+
+            color:
+                #080808;
+
+            text-decoration:
+                none;
+
+            font-weight:
+                bold;
+
+            font-size:
+                16px;
+
+            cursor:
+                pointer;
         }
 
-        .profile-info {
-            margin-top: 20px;
-            padding: 16px;
-            border-radius: 16px;
-            background: #0f0f0f;
-            color: #cfcfcf;
-            font-size: 15px;
-            line-height: 1.5;
+        .button:active {
+            transform:
+                scale(0.98);
         }
 
-        .profile-info strong {
-            color: #39ff88;
+        .profile-info,
+        .invite-info {
+            margin-top:
+                20px;
+
+            padding:
+                18px;
+
+            border-radius:
+                16px;
+
+            background:
+                #0f0f0f;
+
+            color:
+                #cfcfcf;
+
+            font-size:
+                15px;
+
+            line-height:
+                1.5;
+
+            border:
+                1px solid #202020;
+        }
+
+        .profile-info strong,
+        .invite-info strong {
+            color:
+                #39ff88;
+        }
+
+        .invite-code-label {
+            margin-top:
+                4px;
+
+            margin-bottom:
+                8px;
+
+            color:
+                #999999;
+
+            font-size:
+                13px;
+
+            text-transform:
+                uppercase;
+
+            letter-spacing:
+                1px;
+        }
+
+        .invite-code {
+            display:
+                inline-block;
+
+            padding:
+                10px 16px;
+
+            border-radius:
+                12px;
+
+            background:
+                #161616;
+
+            border:
+                1px solid #39ff88;
+
+            color:
+                #39ff88;
+
+            font-size:
+                21px;
+
+            font-weight:
+                800;
+
+            letter-spacing:
+                2px;
+
+            word-break:
+                break-word;
+        }
+
+        .status-message {
+            display:
+                none;
+
+            margin-top:
+                18px;
+
+            padding:
+                12px 14px;
+
+            border-radius:
+                12px;
+
+            background:
+                #101010;
+
+            border:
+                1px solid #292929;
+
+            color:
+                #bdbdbd;
+
+            font-size:
+                14px;
+
+            line-height:
+                1.5;
         }
 
         .footer {
-            margin-top: 30px;
-            color: #777777;
-            font-size: 13px;
+            margin-top:
+                30px;
+
+            color:
+                #777777;
+
+            font-size:
+                13px;
+
+            line-height:
+                1.5;
         }
 
-        #profileContent {
-            display: none;
+        #profileContent,
+        #inviteContent {
+            display:
+                none;
         }
+
     </style>
 </head>
 
@@ -114,6 +334,9 @@
         <div class="logo">
             <span>Sin</span>tonia
         </div>
+
+
+        <!-- TELA INICIAL -->
 
         <div id="homeContent">
 
@@ -144,6 +367,9 @@
 
         </div>
 
+
+        <!-- PERFIL COMPARTILHADO -->
+
         <div
             id="profileContent"
             class="card">
@@ -157,30 +383,118 @@
             </h1>
 
             <p>
-                Alguém compartilhou um perfil do Sintonia com você.
+                Alguém compartilhou um perfil do Sintonia
+                com você.
             </p>
 
             <div class="profile-info">
-                <strong>Perfil disponível</strong>
+
+                <strong>
+                    Perfil disponível
+                </strong>
+
                 <br>
+
                 Abra o aplicativo Sintonia para visualizar
                 as informações deste perfil.
+
             </div>
 
             <a
-                id="openAppButton"
+                id="openProfileButton"
                 class="button"
                 href="#">
+
                 Abrir perfil no Sintonia
+
             </a>
+
+            <div
+                id="profileStatus"
+                class="status-message">
+
+                Se o aplicativo não abrir automaticamente,
+                verifique se o Sintonia está instalado
+                neste dispositivo.
+
+            </div>
 
         </div>
 
+
+        <!-- CONVITE -->
+
+        <div
+            id="inviteContent"
+            class="card">
+
+            <div class="badge">
+                CONVITE SINTONIA
+            </div>
+
+            <h1>
+                Você recebeu um convite
+            </h1>
+
+            <p>
+                Um convite foi compartilhado com você
+                para conhecer o Sintonia.
+            </p>
+
+            <div class="invite-info">
+
+                <div class="invite-code-label">
+                    Código do convite
+                </div>
+
+                <div
+                    id="inviteCode"
+                    class="invite-code">
+
+                    —
+
+                </div>
+
+                <p>
+                    Abra o aplicativo para continuar
+                    usando este convite.
+                </p>
+
+            </div>
+
+            <a
+                id="openInviteButton"
+                class="button"
+                href="#">
+
+                Abrir convite no Sintonia
+
+            </a>
+
+            <div
+                id="inviteStatus"
+                class="status-message">
+
+                Se o aplicativo não abrir automaticamente,
+                verifique se o Sintonia está instalado
+                neste dispositivo.
+
+            </div>
+
+        </div>
+
+
+        <!-- RODAPÉ -->
+
         <div class="footer">
-            Plataforma destinada exclusivamente a maiores de 18 anos.
+
+            Plataforma destinada exclusivamente
+            a maiores de 18 anos.
+
         </div>
 
     </main>
+
 
     <script>
 
@@ -189,50 +503,229 @@
                 window.location.search
             );
 
+
         const profileId =
             params.get(
                 "profile"
             );
+
+
+        const inviteCode =
+            params.get(
+                "invite"
+            );
+
 
         const homeContent =
             document.getElementById(
                 "homeContent"
             );
 
+
         const profileContent =
             document.getElementById(
                 "profileContent"
             );
 
-        const openAppButton =
+
+        const inviteContent =
             document.getElementById(
-                "openAppButton"
+                "inviteContent"
             );
 
+
+        const openProfileButton =
+            document.getElementById(
+                "openProfileButton"
+            );
+
+
+        const openInviteButton =
+            document.getElementById(
+                "openInviteButton"
+            );
+
+
+        const inviteCodeElement =
+            document.getElementById(
+                "inviteCode"
+            );
+
+
+        const profileStatus =
+            document.getElementById(
+                "profileStatus"
+            );
+
+
+        const inviteStatus =
+            document.getElementById(
+                "inviteStatus"
+            );
+
+
+        function esconderTudo() {
+
+            homeContent.style.display =
+                "none";
+
+            profileContent.style.display =
+                "none";
+
+            inviteContent.style.display =
+                "none";
+        }
+
+
+        function codigoConviteValido(
+            codigo
+        ) {
+
+            if (
+                !codigo
+            ) {
+
+                return false;
+            }
+
+            const codigoLimpo =
+                codigo
+                    .trim()
+                    .toUpperCase();
+
+            return /^[A-Z0-9]{6,20}$/.test(
+                codigoLimpo
+            );
+        }
+
+
+        function mostrarPerfil(
+            id
+        ) {
+
+            esconderTudo();
+
+            profileContent.style.display =
+                "block";
+
+
+            const deepLink =
+                "sintonia://profile/" +
+                encodeURIComponent(
+                    id
+                );
+
+
+            openProfileButton.href =
+                deepLink;
+
+
+            openProfileButton.addEventListener(
+                "click",
+                function () {
+
+                    setTimeout(
+                        function () {
+
+                            profileStatus.style.display =
+                                "block";
+
+                        },
+                        1500
+                    );
+                }
+            );
+        }
+
+
+        function mostrarConvite(
+            codigo
+        ) {
+
+            esconderTudo();
+
+            inviteContent.style.display =
+                "block";
+
+
+            const codigoLimpo =
+                codigo
+                    .trim()
+                    .toUpperCase();
+
+
+            inviteCodeElement.textContent =
+                codigoLimpo;
+
+
+            const deepLink =
+                "sintonia://invite/" +
+                encodeURIComponent(
+                    codigoLimpo
+                );
+
+
+            openInviteButton.href =
+                deepLink;
+
+
+            openInviteButton.addEventListener(
+                "click",
+                function () {
+
+                    setTimeout(
+                        function () {
+
+                            inviteStatus.style.display =
+                                "block";
+
+                        },
+                        1500
+                    );
+                }
+            );
+        }
+
+
+        function mostrarInicio() {
+
+            esconderTudo();
+
+            homeContent.style.display =
+                "block";
+        }
+
+
+        /*
+         * PRIORIDADE:
+         *
+         * 1. Convite válido
+         * 2. Perfil compartilhado
+         * 3. Página inicial
+         */
+
         if (
+            codigoConviteValido(
+                inviteCode
+            )
+        ) {
+
+            mostrarConvite(
+                inviteCode
+            );
+
+        } else if (
             profileId &&
             profileId.trim() !== ""
         ) {
 
-            homeContent.style.display =
-                "none";
-
-            profileContent.style.display =
-                "block";
-
-            openAppButton.href =
-                "sintonia://profile/" +
-                encodeURIComponent(
-                    profileId
-                );
+            mostrarPerfil(
+                profileId.trim()
+            );
 
         } else {
 
-            homeContent.style.display =
-                "block";
-
-            profileContent.style.display =
-                "none";
+            mostrarInicio();
         }
 
     </script>
